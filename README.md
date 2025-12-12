@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+Setup Instructions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+2. Install dependencies
+npm install
+3. Start the development server
+npm run dev
 
-Currently, two official plugins are available:
+Git Origin Check / Change Origin:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-Check the current origin
+git remote -v
 
-## React Compiler
+-Set a new origin
+git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-Add origin if missing
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 
-## Expanding the ESLint configuration
+-Push the project for the first time
+git push -u origin main
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Tech Stack Used:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-React.js — UI Component framework
+-TypeScript — Type-safe JavaScript
+-Vite — Fast build tooling
+-Tailwind CSS — Utility-first styling
+-Framer Motion — Smooth animations
+-React Icons — Icon support
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Key Features Implemented:
+Multi-step Quiz Flow
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-Next/previous buttons
+-Submit button
+-Custom progress bar
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Animated UI:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+-Page transition animations (Framer Motion)
+-Animated paw illustration on question 1
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Responsive Design:
+
+-Looks clean on all screen sizes
+-Gradient background
+-Glassmorphism card UI
+
+Result Page:
+
+-Final percentage
+-Restart button
+-Clean, centered layout
+
+Assumptions Made:
+
+-The quiz always contains 5 questions.
+-Each question has one correct answer.
+-User must attempt all questions before seeing the results.
+-The design should be matched as close as possible to the Figma provided.
+-Uses client-side state only; no backend.
+
+Time Spent on the Assignment:
+
+Task                                       Time
+
+Project setup (Vite + TS + Tailwind)	    50 min
+Quiz logic (navigation, state mgmt)	      1 hr
+UI + gradient + card layout	              2 hrs
+Animations (Framer Motion)	              1 hr
+Result page design	                      45 min
+Bug fixes & polishing	                    35 min
+Total Time Spent	                        ~6.5 hours
+
